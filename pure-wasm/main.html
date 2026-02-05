@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Import object for WASM
+            const importObject = {
+                env: {
+                    print_int32: (value) => {
+                        console.log(value);
+                    }
+                }
+            };
+
+            // Load the WASM module
+            WebAssembly.instantiateStreaming(fetch("main.wasm"), importObject)
+                .then((obj) => {
+                    // Run the c_main() function from the C code
+                    obj.instance.exports.c_main();
+                })
+        </script>
+    </body>
+</html>

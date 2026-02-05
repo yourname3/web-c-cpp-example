@@ -1,0 +1,7 @@
+# Compiled by em++
+/emscripten/main.html
+/emscripten/main.js
+/emscripten/main.wasm
+
+# Compiled by clang
+/pure-wasm/main.wasm
